@@ -36,7 +36,7 @@ echo "Rebooting device again"
 sudo ./fastboot_linux reboot
 echo "Waiting for device to reboot"
 sudo ./adb_linux wait-for-device
-echo "Press Enter when the device is recognizedby your pc"
+echo "Press Enter when the device is recognized by your pc"
 read enterKey 
 
 
