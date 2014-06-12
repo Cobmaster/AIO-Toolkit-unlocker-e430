@@ -22,7 +22,7 @@ echo "Device found."
 echo "Pushing unlocker to device"
 echo "this will give you fastboot"
 sudo ./adb_linux push unlocker.bin /sdcard/unlocker.bin
-sudo ./adb_linux shell "dd if=/sdcard/unlocker.bin of=dev/block/mmcblk0p5"
+sudo ./adb_linux shell "su -c dd if=/sdcard/unlocker.bin of=dev/block/mmcblk0p5"
 echo "Rebooting device in fastboot"
 sudo ./adb_linux reboot bootloader
 echo "Waiting for device to reboot"
@@ -36,6 +36,9 @@ echo "Rebooting device again"
 sudo ./fastboot_linux reboot
 echo "Waiting for device to reboot"
 sudo ./adb_linux wait-for-device
+echo "Press Enter when the device is recognizedby your pc"
+read enterKey 
+
 
 echo "Rebooting in CWM"
 sudo ./adb_linux reboot recovery
