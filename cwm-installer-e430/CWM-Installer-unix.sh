@@ -7,5 +7,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         cd Files && sudo chmod +x mac.sh && ./mac.sh
 else
-        echo "unknown OS" && exit
+        echo "unknown OS or using Cygwin" && exit
 fi
